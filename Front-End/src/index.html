@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="bg-white text-black dark:bg-slate-900 dark:text-white transition-colors duration-300">
+    <header>
+        <section class="bg-blue-500 dark:bg-slate-800 w-full h-[10rem] flex justify-center items-center">
+            <div>
+                <img src="/Front-End/public/Traumalogo.png" alt="" class="w-65 h-55">
+                <!-- <h1 class="text-warning">Trauma Team</h1> -->
+            </div>
+        </section>
+    </header>
+        <section class="flex flex-col">
+            <div class="flex flex-col p-[2rem] gap-[1rem] justify-center items-center">
+                <h2>Bem-Vindo</h2>
+                <p>Faça login para continuar</p>
+            </div>
+            <div class="flex flex-col gap-4 justify-center items-center">
+                <form id="loginform" class="max-w-sm mx-auto">
+                    <div class="mb-5">
+                        <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email</label>
+                        <input type="email" id="loginEmail"
+                            class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                            placeholder="nome@exemplo.com" required />
+                    </div>
+                    <div class="mb-5">
+                        <label for="password" class="block mb-2.5 text-sm font-medium text-heading">Senha</label>
+                        <input type="password" id="loginPassword"
+                            class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                            placeholder="••••••••" required />
+                    </div>
+                    <label for="remember" class="flex items-center mb-5">
+                        <input id="remember" type="checkbox" value=""
+                            class="w-4 h-4 border border-default-medium rounded-xs bg-neutral-secondary-medium focus:ring-2 focus:ring-brand-soft"
+                            required />
+                        <p class="ms-2 text-sm font-medium text-heading select-none">Eu aceito os <a href="#"
+                                class="text-fg-brand hover:underline">termos e condições</a>.</p>
+                    </label>
+                    <button type="submit"
+                        class="text-white bg-gray-600 box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none w-[20rem]">Entrar </button>
+                </form>
+                    
+                    <form action="registro.html" class="max-w-sm mx-auto">
+                        <button type="submit"
+                            class="text-white bg-gray-600 box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none w-[20rem]">Registrar-se </button>
+                    </form>
+                <style>
+                    .linha-texto {
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+                    }
+
+                    .linha-texto::before,
+                    .linha-texto::after {
+                        content: '';
+                        flex: 1;
+                        border-bottom: 1px solid #000;
+                        margin: 0 10px;
+                    }
+                </style>
+
+                <div class="linha-texto">ou</div>
+
+                <button type="button" class="text-fg-brand bg-neutral-primary border border-brand hover:bg-brand hover:text-white focus:ring-4 focus:ring-brand-subtle font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none w-[20rem]">entrar com Google</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="theme.js"></script>
+    <!-- CDN Oficial do Flowbite, 1 hora da minha vida para ver que era isso o erro -->
+<script src="https://jsdelivr.net"></script>
+
+    <script>
+  document.getElementById('loginform').addEventListener('submit', async (e) => {
+    //Para o envio padrão da página para validar primeiro no MySQL
+    e.preventDefault(); 
+
+    const credenciais = {
+      email: document.getElementById('loginEmail').value,
+      password: document.getElementById('loginPassword').value
+    };
+
+    try {
+      // Envia os dados para a rota de login no NestJS
+      const response = await fetch('http://localhost:3000/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credenciais)
+      });
+
+      const resultado = await response.json();
+
+      if (response.ok && resultado.success) {
+
+        localStorage.setItem('usuarioLogado', resultado.user.email);
+        
+        alert(`Login efetuado com sucesso! Bem-vindo.`);
+        
+        // Redireciona para a tela
+        window.location.href = 'dashboard.html';
+      } else {
+        
+        alert('E-mail ou senha incorretos! Acesso negado.');
+      }
+    } catch (error) {
+      console.error('Erro na conexão com a API:', error);
+      alert('Não foi possível conectar ao servidor backend.');
+    }
+  });
+</script>
+
+
+</body>
+
+</html>

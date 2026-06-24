@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescrição</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    
+
+    <header>
+         <section class="bg-gray-200">
+            <div class="flex justify-around items-center p-[0.5rem]">
+                <a href="dashboard.html">
+                    <svg class="w-6 h-6 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M5 12l4-4m-4 4 4 4" />
+                    </svg>
+                </a>
+                <h1>Novo Prontuário</h1>
+                <hr>
+            </div>
+        </section>
+        <section class="p-8">
+    
+            <div class="flex  items-center p-4 gap-4 bg-gray-200 max-w-xs w-full justify  border border-default rounded-base">
+                    <img class="w-20 h-20  rounded-full" src="../public/dr.png" alt="Dr. Renan Silva" />
+                    <div>
+                        <h5 class="mb-0.5 text-xl font-semibold tracking-tight text-[#1A2332]">Maria Silva
+                        </h5>
+                        <span class="text-sm  rounded-2xl p-2">45 Anos</span>
+                    </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section>
+            <form action="">
+                <div class="mb-2 p-4 ">
+                    <label for="medicamento" class="block text-sm font-medium text-gray-700">Nome do Medicamento</label>
+                    <input type="text" id="medicamento" name="medicamento" class="mt-1 block w-full border border-gray-400 rounded shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2" placeholder="Buscar medicamento...">
+                </div>
+                
+            </form>
+        </section>
+        <section>
+            <div class="flex items-start m-4">
+                <form action=""class=" >
+                   <label for="dosagem" class="">Dosagem</label>
+                    <input type="text" class="border-gray-500 rounded-2xl focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm  w-[150px]" id="dosagem" name="dosagem" placeholder="Ex: 500mg">
+                </form>
+                <form action="">
+                    <label for="frequencia" class="">Frequência</label>
+                    <input type="text" class="border-gray-500 rounded-2xl w-[150px] focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm " id="frequencia" name="frequencia" placeholder="Ex: 3x ao dia">
+                </form>
+            </div>
+        </section>
+        <section>
+            <form action="">
+                <div class="mb-2 p-4 ">
+                    <label for="duracao" class="block text-sm font-medium text-gray-700">Duração</label>
+                    <input type="text" id="duracao" name="duracao" class="mt-1 block w-full border border-gray-400 rounded shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2" placeholder="Ex: 7 dias">
+                </div>
+                
+            </form>
+            <section class="items-start">
+            <form action="">
+                <div class="mb-2 p-4 ">
+                    <label for="observacoes" class="block text-sm font-medium text-gray-700">Observações</label>
+                    <input type="text" id="observacoes" name="observacoes" class="mt-1 block w-full border border-gray-400 rounded shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2 h-[200px]" placeholder="Observações sobre o medicamento...">
+                </div>
+                
+            </form>
+            
+        </section>
+        <section>
+            <button class="bg-green-500 hover:bg-green-700 text-white font-bold  h-[4rem] w-[20rem] rounded m-8">
+               + Adicionar Medicamento
+            </button>
+        </section>
+        <section class="mb-20">
+            <form action="">
+                <div class="mb-2 p-4 ">
+                    <label for="duracao" class="block text-sm font-medium text-gray-700">Medicamentos Adicionados</label>
+                    <input type="text" id="duracao" name="duracao" class="mt-1 block w-full border border-gray-400 rounded shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2 h-[100px]" placeholder="Ex: Amocilina 500mg - 3x ao dia - 7 dias">
+                </div>
+                
+            </form>
+
+        </section>
+    </main>
+    
+    <footer>
+      <section>
+            <div class="fixed bottom-0 left-0 z-50 w-full h-16 bg-neutral-primary-soft border-t border-default">
+                <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
+                    <a href="dashboard.html"> <button type="button"
+                            class="inline-flex flex-col items-center justify-center px-5 hover:bg-neutral-secondary-medium group">
+                            <svg class="w-6 h-6 mb-1 text-body group-hover:text-fg-brand" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
+                            </svg>
+                            <span class="text-sm text-body group-hover:text-fg-brand">Home</span>
+                        </button>
+                    </a>
+                    <a href="pacientes.html"> <button type="button"
+                            class="inline-flex flex-col items-center justify-center px-5 hover:bg-neutral-secondary-medium group">
+                            <svg class="w-6 h-6 mb-1 text-body group-hover:text-fg-brand" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8H5m12 0a1 1 0 0 1 1 1v2.6M17 8l-4-4M5 8a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.6M5 8l4-4 4 4m6 4h-4a2 2 0 1 0 0 4h4a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1Z" />
+                            </svg>
+                            <span class="text-sm text-body group-hover:text-fg-brand">Pacientes</span>
+                        </button>
+                    </a>
+                    <a href="config.html"> <button type="button"
+                            class="inline-flex flex-col items-center justify-center px-5 hover:bg-neutral-secondary-medium group">
+                            <svg class="w-6 h-6 mb-1 text-body group-hover:text-fg-brand" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                                    d="M6 4v10m0 0a2 2 0 1 0 0 4m0-4a2 2 0 1 1 0 4m0 0v2m6-16v2m0 0a2 2 0 1 0 0 4m0-4a2 2 0 1 1 0 4m0 0v10m6-16v10m0 0a2 2 0 1 0 0 4m0-4a2 2 0 1 1 0 4m0 0v2" />
+                            </svg>
+                            <span class="text-sm text-body group-hover:text-fg-brand">Configurações</span>
+                        </button>
+                    </a>
+                    <button type="button"
+                        class="inline-flex flex-col items-center justify-center px-5 hover:bg-neutral-secondary-medium group">
+                        <svg class="w-6 h-6 mb-1 text-body group-hover:text-fg-brand" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </footer>
+    
+    <script src="theme.js"></script>
+</body>
+</html>
+    <!-- <h1>MEDICO</h1>
+    <div class="bg-white p-4 border rounded-2xl border-gray-300 ">
+        <h1 class="text-gray-500">Buscar Atendimento...</h1>
+        
+    </div> -->

@@ -1,0 +1,48 @@
+TODO: Comandos mais comuns
+git init -> Cria um repositório Git novo e do zero na pasta atual.
+git status -> Mostra o estado atual dos seus arquivos (quais mudaram, sumiram ou foram criados).
+git add . -> Prepara todas as alterações da pasta atual para o próximo commit.
+git add nome-do-arquivo -> Prepara apenas um arquivo específico.
+git commit -m "mensagem" -> Salva suas alterações localmente criando um ponto na história do projeto.
+git push origin nome-da-branch -> Envia seus commits locais para o servidor remoto (GitHub).
+git pull origin nome-da-branch -> Baixa as novidades do GitHub e as junta com o seu código local.
+git fetch -> Baixa as novidades do GitHub, mas não as mistura com o seu código ainda.
+
+TODO: Comandos de Organização
+git branch -> Lista todas as branches (ramificações) existentes no seu projeto local.
+git checkout nome-da-branch -> Muda de uma branch para outra.
+git switch nome-da-branch -> Comando mais moderno que também serve para mudar de branch.
+git checkout -b nova-branch -> Cria uma branch nova e muda para ela imediatamente.
+git merge nome-da-branch -> Junta o código de outra branch na branch onde você está agora.
+git branch -d nome-da-branch -> Deleta uma branch local que já foi mesclada e finalizada.
+
+TODO: Comandos de Orgazinação/Checagem
+git log -> Mostra o histórico de commits com autor, data e mensagens.
+git log --oneline -> Mostra o histórico resumido em apenas uma linha por commit.
+git diff -> Exibe visualmente as mudanças exatas de linhas feitas nos arquivos.
+git remote -v -> Lista os links dos repositórios remotos que estão conectados à sua pasta.
+git blame nome-do-arquivo -> Mostra linha por linha quem escreveu o código daquele arquivo.
+
+TODO: Comandos de Correção/Emergencia
+git restore nome-do-arquivo -> Descarta as modificações não salvas de um arquivo (volta ao último commit).
+git reset --soft HEAD~1 -> Desfaz o último commit feito, mas mantém o seu código intacto para refazer.
+git reset --hard HEAD~1 -> Desfaz o último commit e apaga todas as alterações feitas nele (cuidado!).
+git rm --cached nome-do-arquivo -> Remove um arquivo do rastreio do Git sem apagá-lo do seu computador.
+git push origin branch --force -> Força o envio para o GitHub mesmo que haja conflitos de histórico.
+
+
+
+
+npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+não é .git, porém uso para atualizar o tailwind caso altere algo de suas configurações :D
+
+
+TODO: padrão para commitar, pelo menos o que eu utilizo:
+
+git add -A // busca todas alterações feitas (não apenas em sua pasta) e da stage (prepara as alterações)
+git commit -m "Mensagem foda"  // preciso explicar?
+git status // serve pra checar se deu tudo certo, essa deve ser a mensagem: "nothing to commit, working tree clean"
+
+fé fml
+
+

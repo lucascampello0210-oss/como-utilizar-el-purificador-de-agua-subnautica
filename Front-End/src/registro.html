@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Registro</title>
+</head>
+
+<body class="bg-white text-black dark:bg-slate-900 dark:text-white transition-colors duration-300">
+    <header>
+        <section class="bg-blue-500 dark:bg-slate-800 w-full h-[10rem] flex justify-center items-center">
+            <div>
+                <img src="/Front-End/public/Traumalogo.png" alt="" class="w-65 h-55">
+                <!-- <h1 class="text-warning">Trauma Team</h1> -->
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="flex flex-col">
+            <div class="flex flex-col p-[2rem] gap-[1rem] justify-center items-center">
+                <h2>Registro</h2>
+                <p>Preencha os campos para criar uma conta</p>
+            </div>
+            <div class="flex flex-col gap-4 justify-center items-center">
+                <form id="registerform" action="index.html" class="max-w-sm mx-auto">
+                    <div class="mb-5">
+                        <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email</label>
+                        <input type="email" id="registerEmail"
+                            class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                            placeholder="nome@exemplo.com" required />
+                    </div>
+                    <div class="mb-5">
+                        <label for="password" class="block mb-2.5 text-sm font-medium text-heading">Senha</label>
+                        <input type="password" id="registerPassword"
+                            class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                            placeholder="••••••••" required />
+                    </div>
+                    <div class="mb-5">
+                        <label for="confirmPassword" class="block mb-2.5 text-sm font-medium text-heading">Confirmar
+                            Senha</label>
+                        <input type="password" id="registerConfirmPassword"
+                            class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                            placeholder="••••••••" required />
+                    </div>
+                    <div>
+                        <label for="remember" class="flex items-center mb-5">
+                            <input id="remember" type="checkbox" value=""
+                                class="w-4 h-4 border border-default-medium rounded-xs bg-neutral-secondary-medium focus:ring-2 focus:ring-brand-soft"
+                                required />
+                            <p class="ms-2 text-sm font-medium text-heading select-none">Eu aceito os <a href="#"
+                                    class="text-fg-brand hover:underline">termos e condições</a>.</p>
+                        </label>
+                        <button type="submit"
+                            class="text-white bg-gray-600 box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none w-[20rem]">Registrar</button>
+                        </form>
+                    </div>
+                    <button  class="text-white bg-gray-600 box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none w-[20rem]"><a href="index.html">Voltar</a></button>
+        </section>
+    </main>
+    <footer></footer>
+    <script>
+  document.getElementById('registerform').addEventListener('submit', async (e) => {
+    e.preventDefault(); 
+
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+    const confirmPassword = document.getElementById('registerConfirmPassword').value;
+
+    
+    if (password !== confirmPassword) {
+      alert('As senhas não coincidem! Por favor, verifique.');
+      return; // Para a execução aqui e não envia para o backend
+    }
+
+    // o Prisma espera um "name", então envio o e-mail ou null para não quebrar a tabela
+    const dadosUsuario = {
+      name: email.split('@')[0], // Usa a primeira parte do e-mail como nome padrão
+      email: email,
+      password: password
+    };
+
+    try {
+      const response = await fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dadosUsuario)
+      });
+
+      if (response.ok) {
+        alert('Cadastro realizado com sucesso!');
+        window.location.href = 'index.html'; // Redireciona para a sua tela de Login obviamente
+      } else {
+        alert('Erro ao cadastrar. Verifique se este e-mail já está em uso.');
+      }
+    } catch (error) {
+      console.error('Erro na conexão:', error);
+      alert('Não foi possível falar com o servidor backend.');
+    }
+  });
+</script>
+
+<script src="theme.js"></script>
+</body>

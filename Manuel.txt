@@ -1,0 +1,32 @@
+então familia, muitas mudanças né?
+tamo usando mysql disfarçado de mariadb KKKKKKKKKKKK
+por que o prisma 7 aparentemente não aceita banco externo sem um adaptador
+por isso adaptei (lol)
+então, mysql workbench ou na tela de codguim tb
+junto do prisma e nest, depois desse prisma 7 se tornou mais dificil usar junto do nest pelo visto, mas o adaptador salva
+e o front continua basicamente o mesmo, só adicionei as linhas de código em java lá, até por que a ultima coisa que eu tinha agora seria saco pra saparar mais bunitinho
+
+Manuel de como startar :d
+
+temos que dar 2 partidas
+uma no back end, e deixar rodando no terminal. (deixar rodando sem cair quando abrisse o front ofi dificil, por isso adaptador serviu)
+para rodarmos é  npm run start:dev
+mas lembra de estar no Back-End e no backend-nest
+caso os animais não saibam tem que dar cd Back-End e depois cd backend-nest 
+talvez tenham que dar algum npm para instalar alguma pendencia que não tenham nos notebooks, só um "npm install" deve resolver eu acho, mas por viaa das duvidas ==> npm install @prisma/client / npm install prisma --save-dev / npx prisma init / npm i -g @nestjs/cli (btw acho que 1 ou 2 ai são de construção, provavelmente as do prisma)
+
+depois rodar o Front, apenas clicar com o botão esquerdo no index e abrir com live server
+cadastrei apenas 1 login, mas duvido que vocês possuam um banco conectado nos notebooks dai, mesmo assim por via das duvidas o email é: igor@email.com e a senha: 123
+gn e gl vou commitar agr fml
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+atualização, foi um inferno dar commit, diversos erros e arquivos que eram grande demais para ir, bem em resumo:
+será necessário npm install pois os arquivos que ficaram eram de instalação, e para dar commit é melhor assim:
+git add .
+git commit -m "alguma mensagem sla"
+git push origin main
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+fml, pra alterar as cores do modo escuro usa o prefixo "dark:" pique como muda a tela de pc pra celular tlgd? valeu
