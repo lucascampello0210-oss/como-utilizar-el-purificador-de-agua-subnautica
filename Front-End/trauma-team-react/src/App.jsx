@@ -29,6 +29,9 @@ import DashboardPage from "./pages/DashboardPage";
 import PacientesPage from "./pages/PacientesPage";
 import PrescricaoPage from "./pages/PrescricaoPage";
 import ConfigPage from "./pages/ConfigPage";
+import ProntuarioPage from "./pages/ProntuarioPage";
+import AgendaPage from "./pages/AgendaPage";
+import EstoquePage from "./pages/EstoquePage";
 
 export default function App() {
   const { page, navigate } = useHashRouter();
@@ -48,6 +51,9 @@ export default function App() {
       case "pacientes":  return <PacientesPage navigate={navigate} />;
       case "prescricao": return <PrescricaoPage navigate={navigate} />;
       case "config":     return <ConfigPage   navigate={navigate} />;
+      case "prontuario":  return <ProntuarioPage navigate={navigate} />;
+      case "agenda":      return <AgendaPage navigate={navigate} />;
+      case "estoque":     return <EstoquePage navigate={navigate} />;
       default:           return <LoginPage    navigate={navigate} />;
     }
   };
