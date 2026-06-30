@@ -53,19 +53,19 @@ export default function RegisterPage({ navigate }) {
     <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900">
       {/* Header */}
       <header>
-        <section className="bg-blue-500 dark:bg-slate-800 w-full h-40 flex justify-center items-center">
-          <img src="/public/Traumalogo.png" alt="Trauma Team" className="w-52 h-auto object-contain" />
+        <section className="bg-blue-500 dark:bg-slate-800 w-full h-40 sm:h-48 lg:h-56 flex justify-center items-center">
+          <img src="/public/Traumalogo.png" alt="Trauma Team" className="w-52 sm:w-60 lg:w-64 h-auto object-contain" />
         </section>
       </header>
 
       <main className="flex flex-col flex-1">
-        <div className="flex flex-col p-8 gap-4 justify-center items-center">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">Registro</h2>
+        <div className="flex flex-col p-8 sm:p-10 lg:p-12 gap-4 justify-center items-center">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 dark:text-white">Registro</h2>
           <p className="text-gray-500 dark:text-gray-400">Preencha os campos para criar uma conta</p>
         </div>
 
-        <div className="flex flex-col gap-4 justify-center items-center px-4">
-          <form onSubmit={handleRegister} className="w-full max-w-sm flex flex-col gap-2">
+        <div className="flex flex-col gap-4 justify-center items-center px-4 sm:px-6 lg:pb-12">
+          <form onSubmit={handleRegister} className="w-full max-w-sm sm:max-w-md flex flex-col gap-2">
             <div className="mb-3">
               <label className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-200">Email</label>
               <input
@@ -125,7 +125,7 @@ export default function RegisterPage({ navigate }) {
           <button
             type="button"
             onClick={() => navigate("login")}
-            className={btnClass + " max-w-sm"}
+            className={btnClass + " max-w-sm sm:max-w-md"}
           >
             Voltar
           </button>

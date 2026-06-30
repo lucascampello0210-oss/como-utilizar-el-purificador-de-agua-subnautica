@@ -11,16 +11,16 @@ export default function DashboardPage({ navigate }) {
   return (
     <div className="min-h-screen pb-20 bg-white dark:bg-slate-900 dark:text-white">
       {/* Header */}
-      <header className="p-4 flex flex-col gap-4 bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700">
+      <header className="p-4 sm:p-6 lg:px-8 lg:py-6 flex flex-col gap-4 bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700">
         {/* Logo */}
         <div className="flex justify-center">
           <img src="/public/Logosubnautica.jpg" alt="Logo" className="h-12 object-contain" />
         </div>
 
         {/* Doctor card + stats */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:gap-6 lg:max-w-5xl lg:mx-auto lg:w-full">
           {/* Doctor card */}
-          <div className="relative bg-gray-100 dark:bg-slate-700 max-w-xs w-full border border-gray-200 dark:border-slate-600 rounded-xl shadow-sm">
+          <div className="relative bg-gray-100 dark:bg-slate-700 max-w-xs w-full lg:max-w-sm border border-gray-200 dark:border-slate-600 rounded-xl shadow-sm">
             <div className="flex items-center p-4 gap-3">
               <img className="w-12 h-12 rounded-full object-cover" src="/public/dr.png" alt="Dr. Renan Silva" />
               <div>
@@ -31,7 +31,7 @@ export default function DashboardPage({ navigate }) {
           </div>
 
           {/* Stat cards */}
-          <div className="flex gap-3">
+          <div className="flex gap-3 lg:flex-1">
             <button
               onClick={() => navigate("pacientes")}
               className="bg-gray-100 dark:bg-slate-700 flex-1 border border-gray-200 dark:border-slate-600 rounded-xl shadow-sm hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors flex flex-col items-center p-3"
@@ -50,11 +50,11 @@ export default function DashboardPage({ navigate }) {
       </header>
 
       {/* Main */}
-      <main className="p-4 flex flex-col gap-6">
+      <main className="p-4 sm:p-6 lg:px-8 lg:py-8 lg:max-w-5xl lg:mx-auto lg:w-full flex flex-col gap-6">
         {/* Quick Actions */}
         <section>
           <h1 className="text-lg font-semibold mb-3 text-gray-800 dark:text-white">Ações Rápidas</h1>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
             {quickActions.map((action) => (
               <button
                 key={action.id}
@@ -71,7 +71,7 @@ export default function DashboardPage({ navigate }) {
         {/* Patients today */}
         <section>
           <h1 className="text-lg font-semibold mb-3 text-gray-800 dark:text-white">Pacientes Hoje</h1>
-          <div className="flex items-center p-4 gap-4 bg-gray-100 dark:bg-slate-700 max-w-xs border border-gray-200 dark:border-slate-600 rounded-xl shadow-sm">
+          <div className="flex items-center p-4 gap-4 bg-gray-100 dark:bg-slate-700 max-w-xs sm:max-w-sm border border-gray-200 dark:border-slate-600 rounded-xl shadow-sm">
             <img className="w-12 h-12 rounded-full object-cover" src="/public/dr.png" alt="Maria Silva" />
             <div className="flex-1">
               <h5 className="font-semibold text-gray-800 dark:text-white">Maria Silva</h5>

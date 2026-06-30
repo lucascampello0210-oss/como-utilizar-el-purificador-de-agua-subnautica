@@ -60,7 +60,7 @@ export default function App() {
 
   return (
     <ThemeContext.Provider value={{ dark, setDark }}>
-      <div className="bg-white text-black dark:bg-slate-900 dark:text-white transition-colors duration-300 min-h-screen">
+      <div className="bg-white text-black dark:bg-slate-900 dark:text-white transition-colors duration-300 min-h-screen overflow-x-hidden">
         {renderPage()}
       </div>
     </ThemeContext.Provider>

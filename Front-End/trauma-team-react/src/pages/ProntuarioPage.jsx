@@ -69,7 +69,7 @@ export default function ProntuarioPage({ navigate }) {
       {/* Header */}
       <header>
         <section className="bg-gray-200 dark:bg-slate-800 border-b border-gray-300 dark:border-slate-700">
-          <div className="flex justify-between items-center p-4">
+          <div className="flex justify-between items-center p-4 sm:px-6 lg:px-8 lg:max-w-4xl lg:mx-auto">
             <button
               type="button"
               onClick={() => navigate("dashboard")}
@@ -101,7 +101,7 @@ export default function ProntuarioPage({ navigate }) {
         </section>
 
         {/* Card do paciente */}
-        <section className="p-4">
+        <section className="p-4 sm:px-6 lg:px-8 lg:max-w-4xl lg:mx-auto">
           <div className="bg-blue-50 dark:bg-slate-700 border border-blue-300 dark:border-slate-600 rounded-xl p-4">
             <div className="flex items-center gap-3 mb-3">
               <img
@@ -145,7 +145,7 @@ export default function ProntuarioPage({ navigate }) {
         </section>
 
         {/* Abas */}
-        <section className="px-4 pb-2">
+        <section className="px-4 sm:px-6 lg:px-8 lg:max-w-4xl lg:mx-auto pb-2">
           <div className="flex gap-2">
             {ABAS.map((aba) => (
               <button
@@ -166,7 +166,7 @@ export default function ProntuarioPage({ navigate }) {
         </section>
       </header>
 
-      <main className="flex flex-col gap-5 p-4">
+      <main className="flex flex-col gap-5 p-4 sm:px-6 lg:px-8 lg:max-w-4xl lg:mx-auto lg:w-full">
         {/* Conteúdo das abas */}
         {abaAtiva === "Evolução" && (
           <>
@@ -255,7 +255,7 @@ export default function ProntuarioPage({ navigate }) {
           <h2 className="text-base font-semibold text-gray-800 dark:text-white mb-3">
             Sinais Vitais
           </h2>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
             {SINAIS_VITAIS.map(({ label, valor, bg, border }) => (
               <div
                 key={label}

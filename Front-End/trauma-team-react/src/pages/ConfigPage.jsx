@@ -24,7 +24,7 @@ export default function ConfigPage({ navigate }) {
       {/* Header */}
       <header>
         <section className="bg-gray-200 dark:bg-slate-800 border-b border-gray-300 dark:border-slate-700">
-          <div className="flex justify-between items-center p-4">
+          <div className="flex justify-between items-center p-4 sm:px-6 lg:px-8 lg:max-w-2xl lg:mx-auto">
             <button type="button" onClick={() => navigate("dashboard")} aria-label="Voltar">
               <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M5 12l4-4m-4 4 4 4" />
@@ -36,10 +36,10 @@ export default function ConfigPage({ navigate }) {
         </section>
       </header>
 
-      <main className="flex flex-col gap-6 p-6">
+      <main className="flex flex-col gap-6 p-6 sm:px-8 lg:px-10 lg:max-w-2xl lg:mx-auto lg:w-full">
         {/* Doctor card */}
         <section>
-          <div className="relative bg-blue-100 dark:bg-slate-700 max-w-xs w-full border border-gray-200 dark:border-slate-600 rounded-xl shadow-sm">
+          <div className="relative bg-blue-100 dark:bg-slate-700 max-w-xs w-full sm:max-w-sm border border-gray-200 dark:border-slate-600 rounded-xl shadow-sm">
             <div className="flex items-center p-4 gap-3">
               <img className="w-12 h-12 rounded-full object-cover" src="/public/dr.png" alt="Dr. Renan Silva" />
               <div>
